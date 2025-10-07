@@ -1,0 +1,6 @@
+# dependancy files
+*.d
+# object files
+*.o
+# the exe file
+vectorprog
