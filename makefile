@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -c -Wall -std=c11
 LDFLAGS =
-SOURCES = main2.c vector2.c
+SOURCES = main_update.c vector_update.c
 OBJECTS = $(SOURCES:.c=.o)
 EXECUTABLE = vectorprog
 
