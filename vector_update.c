@@ -7,7 +7,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <vector_update.h>
+#include "vector_update.h"
 
 typedef struct
 {
@@ -52,7 +52,7 @@ void init_store(void)
 
 void free_store(void)
 {
-    if (g.data != null)
+    if (g.data != NULL)
     {
         free(g.data);
         g.data = NULL;
@@ -152,8 +152,6 @@ void print_vec_named(const char *name, const double v[3]) {
     printf("%s = %.3f   %.3f   %.3f\n", name, v[0], v[1], v[2]);
 }
 
-/* ----- CSV ----- */
-
 static void trim(char *s)
 {
     size_t n = strlen(s);
@@ -164,36 +162,36 @@ static void trim(char *s)
     }
 }
 
-int load_csv(const char *fname)
-{
+/* ----- CSV ----- */
+
+int load_csv(const char *fname) {
     FILE *fp = fopen(fname, "r");
-    if (fp == NULL)
-    {
-        printf("Error: Cannot open %s\n", fname);
+    if (fp == NULL) {
+        printf("Error: cannot open %s\n", fname);
         return 0;
     }
+
     clear_store();
 
     char line[256];
     char name[NAME_LEN];
     double x, y, z;
 
-    while (fgets(line, sizeof(line), fp))
-    {
+    while (fgets(line, sizeof(line), fp)) {
         trim(line);
         if (line[0] == '\0') continue;
 
-        if (sscanf(line, "%s[^,],%lf,%lf,%lf", name, &x, &y, &z) == 4)
-        {
+        if (sscanf(line, "%31[^,],%lf,%lf,%lf", name, &x, &y, &z) == 4) {
             set_vector(name, x, y, z);
         } else {
             printf("Warning: bad line ignored: %s\n", line);
         }
     }
-    
+
     fclose(fp);
     return 1;
 }
+
 
 int save_csv(const char *fname)
 {

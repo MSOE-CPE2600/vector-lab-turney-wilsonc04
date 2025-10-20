@@ -5,7 +5,7 @@
 */
 #include <stddef.h>
 
-#define NAME_LEN = 32
+#define NAME_LEN 32
 
 // A stored 3D vector with a simple name and 3 doubles.
 typedef struct {
