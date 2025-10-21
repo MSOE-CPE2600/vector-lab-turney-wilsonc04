@@ -12,33 +12,33 @@ that no memory leaks occur.
 ## How to Build
 Use the provided makefile to compile the program:
 
-  -make clean\
-  -make
+  - make clean\
+  - make
 
 The program must compile with no warnings.
 
 ## How to Run
 Run the executable from the termial:
 
-  -./vectorcalc
+  - ./vectorcalc
 
 You can also test memory leaks using:
 
-  -valgrind --leak-check=full ./vectorcalc
+  - valgrind --leak-check=full ./vectorcalc
 
 ## Commands Supported
 This program supports the following user commands: 
 
-  load <filename> - Loads vectors from a CSV file. 
-  save <filename> - Saves all vectors currently in memory to a CSV file.
-  add <v1> <v2> - Adds two vectors and stores the result as a new vector.
-  sub <v1> <v2> - Subtracts one vector from another.
-  dot <v1> <v2> - Calculates the dot product.
-  cross <v1> <v2> - Calculates the cross product.
-  mag <v> - Calculates the magnitude of a vector.
-  clear - Deletes all stored vectors and frees memory.
-  list - Displays all currently stored vectors.
-  exit - Exits the program cleanly, releasing all dynamic memory
+  - load <filename> - Loads vectors from a CSV file.\
+  - save <filename> - Saves all vectors currently in memory to a CSV file.\
+  - add <v1> <v2> - Adds two vectors and stores the result as a new vector.\
+  - sub <v1> <v2> - Subtracts one vector from another.\
+  - dot <v1> <v2> - Calculates the dot product.\
+  - cross <v1> <v2> - Calculates the cross product.\
+  - mag <v> - Calculates the magnitude of a vector.\
+  - clear - Deletes all stored vectors and frees memory.\
+  - list - Displays all currently stored vectors.\
+  - exit - Exits the program cleanly, releasing all dynamic memory.\
 
 ## How this program uses dynamic memory
 This program dynamically allocates memory to store vecotrs as they are created or loaded.
