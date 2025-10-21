@@ -12,7 +12,7 @@ that no memory leaks occur.
 ## How to Build
 Use the provided makefile to compile the program:
 
-  -make clean\n
+  -make clean\
   -make
 
 The program must compile with no warnings.
